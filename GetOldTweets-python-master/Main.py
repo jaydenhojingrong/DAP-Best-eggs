@@ -7,7 +7,7 @@ else:
 def main():
 
 	def printTweet(descr, t):
-		print(f'{descr}: {t.text}')
+		print(f'{descr}: {t.text} {t.date}')
 		# print(descr)
 		# print("Username: %s" % t.username)
 		# print("Retweets: %d" % t.retweets)
@@ -22,9 +22,9 @@ def main():
 	# printTweet("### Example 1 - Get tweets by username [barackobama]", tweet)
 
 	# Example 2 - Get tweets by query search
-	tweetCriteria = got.manager.TweetCriteria().setQuerySearch('trump').setSince("2016-06-16").setNear("America").setUntil("2016-09-30").setMaxTweets(10000)
+	tweetCriteria = got.manager.TweetCriteria().setQuerySearch('trump').setSince("2016-06-16").setNear("America").setUntil("2016-09-30").setMaxTweets(100)
 	#print(len(got.manager.TweetManager.getTweets(tweetCriteria)))
-	for i in range(100):
+	for i in range(10):
 		tweet = got.manager.TweetManager.getTweets(tweetCriteria)[i]
 
 		printTweet(i, tweet)
