@@ -7,12 +7,13 @@ else:
 def main():
 
 	def printTweet(descr, t):
-		print(descr)
-		print("Username: %s" % t.username)
-		print("Retweets: %d" % t.retweets)
-		print("Text: %s" % t.text)
-		print("Mentions: %s" % t.mentions)
-		print("Hashtags: %s\n" % t.hashtags)
+		print(f'{descr}: {t.text}')
+		# print(descr)
+		# print("Username: %s" % t.username)
+		# print("Retweets: %d" % t.retweets)
+		# print("Text: %s" % t.text)
+		# print("Mentions: %s" % t.mentions)
+		# print("Hashtags: %s\n" % t.hashtags)
 
 	# # Example 1 - Get tweets by username
 	# tweetCriteria = got.manager.TweetCriteria().setUsername('barackobama').setMaxTweets(1)
@@ -21,11 +22,12 @@ def main():
 	# printTweet("### Example 1 - Get tweets by username [barackobama]", tweet)
 
 	# Example 2 - Get tweets by query search
-	tweetCriteria = got.manager.TweetCriteria().setQuerySearch('trump').setSince("2015-05-01").setNear("Singapore").setUntil("2015-09-30").setMaxTweets(100)
-	for i in range(10):
+	tweetCriteria = got.manager.TweetCriteria().setQuerySearch('trump').setSince("2016-06-16").setNear("America").setUntil("2016-09-30").setMaxTweets(10000)
+	#print(len(got.manager.TweetManager.getTweets(tweetCriteria)))
+	for i in range(100):
 		tweet = got.manager.TweetManager.getTweets(tweetCriteria)[i]
 
-		printTweet("### Example 2 - Get tweets by query search [europe refugees]", tweet)
+		printTweet(i, tweet)
 
 	# # Example 3 - Get tweets by username and bound dates
 	# tweetCriteria = got.manager.TweetCriteria().setUsername("barackobama").setSince("2015-09-10").setUntil("2015-09-12").setMaxTweets(1)
