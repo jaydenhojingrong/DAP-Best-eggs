@@ -22,10 +22,9 @@ def main():
 	#print(len(got.manager.TweetManager.getTweets(tweetCriteria)))
 
 	with open('data.csv', mode='w') as employee_file:
+		employee_writer = csv.writer(employee_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
 		for i in range(10):
 			tweet = got.manager.TweetManager.getTweets(tweetCriteria)[i]
-			employee_writer = csv.writer(employee_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-
 			employee_writer.writerow(printTweet(tweet))	
 
 if __name__ == '__main__':
