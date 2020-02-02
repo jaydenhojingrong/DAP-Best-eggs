@@ -13,7 +13,7 @@ def main(argv):
 
 	if len(argv) == 1 and argv[0] == '-h':
 		f = open('exporter_help_text.txt', 'r')
-		print f.read()
+		print (f.read())
 		f.close()
 
 		return
@@ -22,7 +22,7 @@ def main(argv):
 		opts, args = getopt.getopt(argv, "", ("username=", "near=", "within=", "since=", "until=", "querysearch=", "toptweets", "maxtweets=", "output="))
 
 		tweetCriteria = got.manager.TweetCriteria()
-		outputFileName = "output_got.csv"
+		outputFileName = "Trump_Sep2016.csv"
 
 		for opt,arg in opts:
 			if opt == '--username':
