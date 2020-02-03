@@ -22,7 +22,7 @@ def main(argv):
 		opts, args = getopt.getopt(argv, "", ("username=", "near=", "within=", "since=", "until=", "querysearch=", "toptweets", "maxtweets=", "output="))
 
 		tweetCriteria = got.manager.TweetCriteria()
-		outputFileName = "Trump_Dec2016.csv"
+		outputFileName = "Clinton_Jan2016.csv"
 
 		for opt,arg in opts:
 			if opt == '--username':
